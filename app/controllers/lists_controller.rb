@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-
+  require 'uri'
   def index
     @lists = List.all
   end
