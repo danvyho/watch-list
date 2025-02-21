@@ -1,18 +1,25 @@
 <nav class="navbar navbar-light bg-light px-4">
   <div class="d-flex align-items-center">
     <i class="fa-solid fa-film text-primary me-2" style="font-size: 40px;"></i>
-    <a class="navbar-brand fw-bold" href="#">Movie Lists</a>
+    <a class="navbar-brand fw-bold" href="#">Movie Lists!!!</a>
   </div>
   <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
 </nav>
 
-
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 
 <div class="movies-grid">
       <% @list.movies.each do |movie| %>
       <div class="box-poster">
         <img class="img-poster" src="<%= movie.title %>">
-        <p class="movie-path"><%= link_to movie.title, movie_path(movie) %></p>
+        <p class="movie-path"><%= link_to list_path(list) %></p>
       </div>
       <% end %>
     </div>
