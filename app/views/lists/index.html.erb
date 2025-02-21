@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light bg-light px-4">
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-film text-primary me-2" style="font-size: 40px;"></i>
+    <a class="navbar-brand fw-bold" href="#">Movie Lists</a>
+  </div>
+  <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
+</nav>
+
+<div class="jumbotron jumbotron-fluid p-0">
+  <div class="banner position-relative d-flex align-items-center justify-content-center text-center"
+      style="background: url('https://static01.nyt.com/images/2023/03/02/multimedia/00MoviePrices-01-ghqw/00MoviePrices-01-ghqw-videoSixteenByNine3000.jpg?year=2023&h=1688&w=3000&s=7b9d4dda10b9bef58883ac6445db954879357c11719415600c6bdf094fc8e440&k=ZQJBKqZ0VN&tw=1') center/cover no-repeat; width: 100vw; height: 500px;">
+
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+
+    <h1 class="display-4 text-white position-relative">Your Movie Collection</h1>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="d-flex justify-content-end mb-3">
+    <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="row g-4">
+    <% @lists.each do |list| %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow-sm">
+          <img src="https://m.media-amazon.com/images/I/617V262dsBL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Movie Poster" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold"><%= list.name %></h5>
+            <p class="card-text text-muted">A collection of great movies curated by you.</p>
+            <%= link_to 'View List', list_path(list), class: "btn btn-outline-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

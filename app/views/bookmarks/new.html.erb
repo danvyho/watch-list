@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light px-4">
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-film text-primary me-2" style="font-size: 40px;"></i>
+    <a class="navbar-brand fw-bold" href="#">Movie Lists</a>
+  </div>
+  <%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
+</nav>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
